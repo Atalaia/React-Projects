@@ -1,0 +1,8 @@
+.RandomNumber {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    border: 1px solid skyblue;
+    border-radius: 3px;
+    padding: 10px;
+}
