@@ -13,12 +13,11 @@ class NewTodoForm extends Component {
     handleChange(evt) {
         this.setState({
             [evt.target.name]: evt.target.value
-
         });
     }
     handleSubmit(evt) {
         evt.preventDefault();
-        const newTodo = { ...this.state, id: uuidv4() };
+        const newTodo = { ...this.state, id: uuidv4(), completed: false };
         this.props.addNewTodo(newTodo);
         this.setState({
             todoItem: ""
@@ -33,6 +32,7 @@ class NewTodoForm extends Component {
                     <input
                         type="text"
                         id="todo"
+                        placeholder="New task"
                         name="todoItem"
                         onChange={this.handleChange}
                         value={this.state.todoItem}

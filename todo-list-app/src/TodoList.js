@@ -9,6 +9,9 @@ class TodoList extends Component {
             todosList: []
         }
         this.createTodo = this.createTodo.bind(this);
+        this.removeTodo = this.removeTodo.bind(this);
+        this.updateTodo = this.updateTodo.bind(this);
+        this.toggleCompletion = this.toggleCompletion.bind(this);
     }
     createTodo(newTodo) {
         this.setState({
@@ -20,22 +23,47 @@ class TodoList extends Component {
             todosList: this.state.todosList.filter(todo => todo.id !== id)
         });
     }
+    updateTodo(id, updatedTodo) {
+        const updatedTodos = this.state.todosList.map(todo => {
+            if (todo.id === id) {
+                return { ...todo, todoItem: updatedTodo };
+            }
+            return todo;
+        });
+        this.setState({
+            todosList: updatedTodos
+        });
+    }
+    toggleCompletion(id) {
+        const updatedTodos = this.state.todosList.map(todo => {
+            if (todo.id === id) {
+                return { ...todo, completed: !todo.completed };
+            }
+            return todo;
+        });
+        this.setState({
+            todosList: updatedTodos
+        });
+    }
 
     render() {
-        const todos = this.state.todosList.map(todo => (
-            <Todo
+        const todos = this.state.todosList.map(todo => {
+            return <Todo
                 key={todo.id}
                 id={todo.id}
                 todoItem={todo.todoItem}
-                removeTodoItem={() => this.removeTodo(todo.id)}
+                completed={todo.completed}
+                removeTodoItem={this.removeTodo}
+                updateTodoItem={this.updateTodo}
+                toggleTodo={this.toggleCompletion}
             />
-        ));
+        });
 
         return (
             <div>
                 <h1>Todo List!</h1>
                 <p>A Simple React Todo List App.</p>
-                {todos}
+                <ul>{todos}</ul>
                 <NewTodoForm addNewTodo={this.createTodo} />
             </div>
         );
