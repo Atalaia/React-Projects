@@ -111,7 +111,7 @@ class Game extends Component {
               <button
                 className='Game-reroll'
                 disabled={
-                  locked.every(x => x) || 
+                  locked.every(x => x) ||
                   rollsLeft === 0 ||
                   rolling
                 }
@@ -122,7 +122,10 @@ class Game extends Component {
             </div>
           </section>
         </header>
-        <ScoreTable doScore={this.doScore} scores={scores} />
+        <ScoreTable
+          doScore={this.doScore}
+          scores={scores}
+        />
       </div >
     );
   }
