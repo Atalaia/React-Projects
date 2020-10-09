@@ -20,7 +20,9 @@ class JokeList extends Component {
     }
 
     componentDidMount() {
-        if (this.state.jokes.length === 0) this.getJokes();
+        if (this.state.jokes.length === 0) {
+            this.setState({ loading: true }, this.getJokes);
+        }
     }
 
     async getJokes() {
@@ -52,7 +54,7 @@ class JokeList extends Component {
             );
             console.log(this.state.jokes);
         } catch (e) {
-            alert (e);
+            alert(e);
             this.setState({ loading: false });
         }
     }
