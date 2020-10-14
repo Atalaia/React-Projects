@@ -1,0 +1,42 @@
+.VendingMachine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.VendingMachine-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    margin: 3rem;
+    font-size: 2rem;
+}
+
+.VendingMachine-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.VendingMachine-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+    width: 20%;
+}
+
+.VendingMachine-link {
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.active-link {
+    color: teal;
+}
