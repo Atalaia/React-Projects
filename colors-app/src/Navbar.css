@@ -27,6 +27,10 @@
     display: inline-block;
 }
 
+.slider-container span {
+    margin-right: 5px;
+}
+
 .rc-slider-track {
     background-color: transparent;
 }
