@@ -1,0 +1,28 @@
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 100wh;
+  }
+
+  .logo {
+    margin: auto;
+  }
+
+  .death-star {
+    width: 400px;
+    height: 350px;
+    margin: auto;
+  }
+  
+  .volume {
+    background: transparent;
+    border: 0;
+    bottom: 10px;
+    cursor: pointer;
+    left: 10px;
+    position: absolute;
+    z-index: 1000;
+  }
+  .volume img {
+    height: 24px;
+  }

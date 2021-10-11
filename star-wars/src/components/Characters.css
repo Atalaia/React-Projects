@@ -1,0 +1,11 @@
+.Characters {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-self: center;
+}
