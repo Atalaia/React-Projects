@@ -18,7 +18,7 @@
 }
 
 .coin-search {
-  margin-bottom: 64px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,4 +47,9 @@
 
 .coin-input::placeholder {
   color: #e2e2e2;
+}
+
+.coin-filter-dropdown-btn > button {
+  width: 200px;
+  height: 50px;
 }
